@@ -1,0 +1,40 @@
+{
+  "name": "XenopsFramework",
+  "version": "0.0.0",
+  "description": "New REST API framework",
+  "main": "server.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "dependencies": {
+    "mssql": "~0.5.3",
+    "restify": "~2.7.0",
+    "node-uuid": "~1.4.1",
+    "socket.io": "~0.9.16",
+    "restify-validator": "~0.3.1",
+    "util": "~0.10.3",
+    "winston": "~0.7.3",
+    "mkdirp": "^0.5.0",
+    "ncp": "^0.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.fingent.net:girish/XenopsFramework.git"
+  },
+  "keywords": [
+    "framework",
+    "web",
+    "rest",
+    "restful",
+    "router",
+    "app",
+    "api"
+  ],
+  "author": "Fingent Technologies <http://www.fingent.com/>",
+  "license": "MIT"
+}

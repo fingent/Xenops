@@ -1,0 +1,35 @@
+<html>
+<head>
+	<title>Client page </title>
+	<script src="http://localhost:8888/socket.io/socket.io.js"></script>
+<!--<script src="jquery-1.6.1.min.js"></script> -->
+<script type="text/javascript">
+window.onload = function() {
+	  var socket = io.connect('http://localhost:8888/');
+	  socket.on('news', function (data) {
+	    console.log(JSON.stringify(data));
+	   // Send to server 
+	    socket.emit('toserver', { my: 'data' });
+	  });
+	  socket.on('listenserver', function (data) {
+	    console.log("Get data from server" + JSON.stringify(data));
+	   
+	  });
+	  socket.on('connect_failed', function(){
+ 		console.log('Connection Failed');
+	  });
+	  socket.on('connect', function(){
+	  	console.log('Connected to io server');
+	  })
+	  socket.on('disconnect', function(){
+	  	console.log('IO Server stopped.');
+	  })
+} 
+</script>
+
+</head>
+<body>
+This is testing the REST API services. 
+</body>
+</html>
+
