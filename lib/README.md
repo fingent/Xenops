@@ -1,4 +1,4 @@
-Node js Structured Framework
+Node js Xenops Framework
 =============================
 This framework is REST API based one and it can be used for fast api development. User can easily develop api functionality without doing much work.  
 Framework structure is shown in fig.
@@ -14,8 +14,8 @@ Next we can use the commandline utility, type xenops in terminal and press enter
 	$ xenops
 	Please provide the app name. Usage - xenops [dirname] eg: xenops myapp
 
-If you want to generate an application with xenops, you should first navigate to the folder using cd command, where we want to create app.  
-Create application using xenops commandline :
+If you want to generate an application with Xenops, you should first navigate to the folder using cd command, where we want to create app.  
+Create application using Xenops commandline :
 
 	$ xenops appname
 	Xenops sample Framework structure created in appname.
