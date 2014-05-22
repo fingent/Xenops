@@ -1,6 +1,7 @@
 Node js Xenops Framework
 =============================
-This framework is REST API based one and it can be used for fast api development. User can easily develop api functionality without doing much work.  
+This framework is simple and including full featured components of REST API , database management, web socket management and view with static, dynamic web pages. It includes socket management system, data driven REST API, static and dynamic views, friendly URL routing, validation, logging, REST API functionality testing module etc. This framework architecture is service handler oriented one and user can easily develop simple to complex level API functionality. Data management module handles data models with validation and sanitization, models retrieves the data from database using correct node modules. It is especially good for building REST API, multi room chat, virtual class room, real time scalable dashboards, multiplayer games and website with static, dynamic view based web pages. It is an extensible framework, user can easily extend the framework and rewrite functionality and change it according to their own needs.   
+
 Framework structure is shown in fig.
 ![screen](https://raw.githubusercontent.com/fingent/xenops/master/lib/doc/codescreens/structurethis.png)![screen1](https://raw.githubusercontent.com/fingent/xenops/master/lib/doc/codescreens/treestructure.png)
 
@@ -36,7 +37,7 @@ Open the browser and type url :http://localhost:8888/ shows
 Framework structure
 -------------------
 	The structure of the files in an application is very important.It will help us to expand the current application structure by adding more modules and make an good app.
-Before doing that one , we should clearly understand the basic structure and how to make simple api function using current app. We will separate core functions of our app into  sensible and efficient file structure.    
+Before doing that one , we should clearly understand the basic structure and how to make simple api function using current app. We will separate core functions of our app into sensible and efficient file structure.    
 
 This framework contains some important modules,
 
@@ -82,8 +83,8 @@ var socketEventEmit = require('../events/socketEventEmitter');
 ![socketemitters](https://raw.githubusercontent.com/fingent/xenops/master/lib/doc/codescreens/socket-emitter.png)
 
 ## Views management 
-We have already mentioned that this framework is REST Api based one and there is no view present in it. But in future we are looking for common framework for web based
-and REST api. For this one, we have started static and dynamic html page rendering using current framework.
+We have already mentioned that this framework is REST API based one and there is no view present in it. But in future we are looking for common framework for web based
+and REST API. For this one, we have started static and dynamic html page rendering using current framework.
 ```
 // Custom controller routes
 this.server.get('/staticview', this.controllers.custom.staticView); 
@@ -109,7 +110,7 @@ logger.info('Application server started. ');
 Two log files are created inside log folder for debug and exception log.
 
 ## Client testing
-This module is very important one and it can be used for  REST api functional testing. Here is one html and  js  file, html file is used for socket io connection testing and js file one is used for testing
+This module is very important one and it can be used for  REST API functional testing. Here is one html and  js  file, html file is used for socket io connection testing and js file one is used for testing
 ![client](https://raw.githubusercontent.com/fingent/xenops/master/lib/doc/codescreens/client.png)  
 How to use this one ?  
 ```
@@ -143,7 +144,7 @@ Update the server.js with code shown in above. Initialise service handlers with 
 Edit routes\routes.js and update it.
 ![router](https://raw.githubusercontent.com/fingent/xenops/master/lib/doc/codescreens/routes.png)
 
-Now everything is completed and the new REST api function developed using our own new structured framework. It is very simple. 
+Now everything is completed and the new REST API function developed using our own new structured framework. It is very simple. 
 
 ## Run the server steps
 
