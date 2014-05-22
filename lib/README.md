@@ -1,4 +1,4 @@
-Node js Xenops Framework
+Xenops Framework
 =============================
 This framework is simple and including full featured components of REST API , database management, web socket management and view with static, dynamic web pages. It includes socket management system, data driven REST API, static and dynamic views, friendly URL routing, validation, logging, REST API functionality testing module etc. This framework architecture is service handler oriented one and user can easily develop simple to complex level API functionality. Data management module handles data models with validation and sanitization, models retrieves the data from database using correct node modules. It is especially good for building REST API, multi room chat, virtual class room, real time scalable dashboards, multiplayer games and website with static, dynamic view based web pages. It is an extensible framework, user can easily extend the framework and rewrite functionality and change it according to their own needs.   
 
