@@ -44,8 +44,10 @@ This framework contains some important modules,
  - Configuration
  - Routing
  - Logging
- - Socket io programming
  - Data management
+ - Socket io programming
+ - Views management
+ - Template management
  - Client testing
 
 ## Configuration
@@ -95,6 +97,9 @@ Static and dynamic page render handlers.
 
 ## Template management
 EJS is a very popular opensource javascript template library and used in this framework.
+
+### How to use template in Framework
+
 Add one index.ejs file in views folder.
 
 	<h1>Fingent Technology Solutions</h1>
@@ -130,7 +135,8 @@ template code for controller
 		return next();
 	};
 
-Now there is no Template mechanism implemented.
+Open the browser and type -> http://localhost:8888/template shows
+![template](https://raw.githubusercontent.com/fingent/xenops/master/lib/doc/codescreens/template.png)
 
 ## Data handling in CRUD operations
 Here we have already implemented a CRUD operation api functionalities using the current api framework.It includes user controller, model, routes etc.   
