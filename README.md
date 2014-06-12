@@ -204,7 +204,6 @@ Here we are using the sql server database and mssql node module included here.
   
 ## Moving forward
  In the future we want our framework to include cool features like
- - Have multiple database(mysql, sqlite etc) configs 
- - Views development with templates
+ - ORM development  
  - Secure api development 
  
