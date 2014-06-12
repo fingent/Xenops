@@ -93,6 +93,43 @@ this.server.get('/dynamicview', this.controllers.custom.dynamicView);
 Static and dynamic page render handlers.
 ![views](https://raw.githubusercontent.com/fingent/xenops/master/lib/doc/codescreens/view-handlers.png)
 
+## Template management
+EJS is a very popular opensource javascript template library and used in this framework.
+Add one index.ejs file in views folder.
+
+	<h1>Fingent Technology Solutions</h1>
+	<% if (data.length) { %>
+		<ul>
+			<%  data.forEach(function(name) {   %>
+				<li><strong><%= name %></strong></li>
+			<%  }) %>
+		</ul>
+
+	<% } %>
+
+Add new url route to routes.js
+
+	this.server.get('/template', this.controllers.custom.templateView); 
+
+template code for controller
+
+	CustomController.prototype.templateView = function(req, res, next) {
+		// Read it asynchronus mode 
+		fs.readFile(constant.APP_PATH + '/views/index.ejs', 'UTF-8', function(err, templateStr){
+			if (err)
+				res.end(''+ err);
+			else { 	
+				var returnStr = ejs.render(templateStr, {
+					data: ['Fingent', 'Xenops', 'Framework']
+				});
+				res.writeHead(200, {'Content-Type': 'text/html'});
+				res.end(returnStr);
+			}
+		});
+	
+		return next();
+	};
+
 Now there is no Template mechanism implemented.
 
 ## Data handling in CRUD operations
