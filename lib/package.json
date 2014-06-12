@@ -15,7 +15,11 @@
     "util": "~0.10.3",
     "winston": "~0.7.3",
     "mkdirp": "^0.5.0",
-    "ncp": "^0.5.1"
+    "ncp": "^0.5.1",
+    "ejs": "^1.0.0",
+    "mysql": "^2.3.2",
+    "orm": "^2.1.15"
+
   },
   "devDependencies": {},
   "scripts": {
