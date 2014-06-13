@@ -1,7 +1,7 @@
 {
   "name": "xenops",
-  "version": "0.0.2",
-  "description": "New REST API framework",
+  "version": "0.0.6",
+  "description": "New REST API, Real Time, MVC framework",
   "main": "./lib/server.js",
   "directories": {
     "doc": "doc"
@@ -18,7 +18,10 @@
     "util": "~0.10.3",
     "winston": "~0.7.3",
     "mkdirp": "^0.5.0",
-    "ncp": "^0.5.1"
+    "ncp": "^0.5.1",
+    "ejs": "^1.0.0",
+    "mysql": "^2.3.2",
+    "orm": "^2.1.15"
   },
   "devDependencies": {},
   "scripts": {
@@ -35,7 +38,10 @@
     "restful",
     "router",
     "app",
-    "api"
+    "api",
+    "REST API",
+    "MVC",
+    "structured"
   ],
   "author": "Jinesh madhavan<jinesh.pm@fingent.com>",
     "contributors": [{
