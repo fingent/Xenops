@@ -73,7 +73,7 @@ This framework has separate directory structure for each file model, controller 
 Socket io connection established through the same port used for api development. We have modularise the code to controller and model.There is no view present in this structured Framework.Here i am trying to explain code features of socket io programming and cool feature technology named web Real Time communication through code samples.
 Node uses an event-driven, Non blocking I/O programming model and javascript is event driven language.One of the main feature of node js is event module, and EventEmitter class.Here i am not going to explain full server side code to implement multiple room real time communication. But I beleive that you will get a basic boilerplate for creating a multiple realtime communication. 
  In this socket io module implemented in socket controller, socket io configuration settings for the production and development are given.
-![socketio](https://raw.githubusercontent.com/fingent/xenops/master/lib/doccodescreens/socketcontroller.png)
+![socketio](https://raw.githubusercontent.com/fingent/xenops/master/lib/doc/codescreens/socketcontroller.png)
  In the socket io programming socket has to listen for many events. We have created one custom event class to control socket events.
 Socket Event listeners are added in controllers.  	
 ![socketlisteners](https://raw.githubusercontent.com/fingent/xenops/master/lib/doc/codescreens/socket-listeners.png)
