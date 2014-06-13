@@ -1,6 +1,6 @@
 Xenops Framework
 =============================
-This framework is simple and including full featured components of REST API , database management, web socket management and view with static, dynamic web pages. It includes socket management system, data driven REST API, static and dynamic views, friendly URL routing, validation, logging, REST API functionality testing module etc. This framework architecture is service handler oriented one and user can easily develop simple to complex level API functionality. Data management module handles data models with validation and sanitization, models retrieves the data from database using correct node modules. It is especially good for building REST API, multi room chat, virtual class room, real time scalable dashboards, multiplayer games and website with static, dynamic view based web pages. It is an extensible framework, user can easily extend the framework and rewrite functionality and change it according to their own needs.   
+This framework is simple and including full featured components of REST API, MVC framework, database management, web socket management and view with static, dynamic web pages. It includes socket management system, data driven REST API, static and dynamic views, friendly URL routing, validation, logging, REST API functionality testing module etc. This framework architecture is service handler oriented one and user can easily develop simple to complex level API functionality. Data management module handles data models with validation and sanitization, models retrieves the data from database using correct node modules. It is especially good for building REST API, multi room chat, virtual class room, real time scalable dashboards, multiplayer games and website with static, dynamic view based web pages. It is an extensible framework, user can easily extend the framework and rewrite functionality and change it according to their own needs.   
 
 Framework structure is shown in fig.
 ![screen](https://raw.githubusercontent.com/fingent/xenops/master/lib/doc/codescreens/structurethis.png)![screen1](https://raw.githubusercontent.com/fingent/xenops/master/lib/doc/codescreens/treestructure.png)
@@ -48,6 +48,7 @@ This framework contains some important modules,
  - Socket io programming
  - Views management
  - Template management
+ - Object Relational Mapping 
  - Client testing
 
 ## Configuration
@@ -137,6 +138,89 @@ template code for controller
 
 Open the browser and type -> http://localhost:8888/template shows
 ![template](https://raw.githubusercontent.com/fingent/xenops/master/lib/doc/codescreens/template.png)
+## Object Realational Mapping(ORM)
+This is node js object relational mapping module named orm node module. The key feature of ORM is the mapping it uses to bind an object to its data in the database.
+ORM has the benefit of allowing you to more easily support more database engines.
+Currenly it support following DBMS
+
+ - MySQL & MariaDB 
+ - PostgreSQL
+ - Amazon Redshift
+ - SQLite
+ - MongoDB (beta)
+
+It has so many features 
+
+ - Create Models, sync, drop, bulk create, get, find, remove, count, aggregated functions
+ - Create Model associations, find, check, create and remove
+ - Define custom validations (several builtin validations, check instance properties before saving)
+
+### Usage example 
+
+Add new url to routes.js
+
+	this.server.get('/getcustomers', this.controllers.custom.getAllCustomers); 
+
+A Model is an abstraction over one or more database tables. Models support associations. The name of the model is assumed to match the table name.
+Create model file customerModel.js and add code.
+
+	// Define customer model  
+	module.exports = function(db){
+
+		var Customer = db.define('customer', {
+			name : String,
+			email: String
+		}, {
+			methods: {
+				getName: function(){
+					return this.name;
+				},
+				getEmail: function(){
+					return this.email;
+				}
+			}
+		});
+
+		return Customer;
+	};
+
+customer is the table name and name, email are fields.
+
+Drop this bits of code in /controllers/customController.js
+
+	CustomController.prototype.getAllCustomers = function(req, res, next){
+
+		res.writeHead(200, {'Content-Type': 'application/json'});
+
+		// ORM database connected 
+		if (ormDb) {
+
+			var customerModel = require('../models/customerModel')(ormDb);
+			// To get all customers, {} for first customer {id: 1}  
+			customerModel.find({}, function(err, customers){
+
+				if (err) {
+					console.log('DB Error ='+ err);
+					res.end(JSON.stringify(err));
+					return ; 
+				}
+				// Print Collection of customer object 
+				res.end(JSON.stringify(customers));
+			})	
+
+		} else {
+
+			res.end('No database connection.');
+		}
+
+		return next();
+	};
+
+Open the browser and type -> http://localhost:8888/getcustomers
+
+	[{"name":"John Luka","email":"luka@gmail.com","id":1},{"name":"Maria","email":"maria@gmail.com","id":2}]
+
+results is the mysql table customer total records displayed as json.  	
 
 ## Data handling in CRUD operations
 Here we have already implemented a CRUD operation api functionalities using the current api framework.It includes user controller, model, routes etc.   
@@ -200,10 +284,12 @@ It is working fine. The above mentioned example is simple one. For database rela
 
 ![database](https://raw.githubusercontent.com/fingent/xenops/master/lib/doc/codescreens/model.png)
 
-Here we are using the sql server database and mssql node module included here.
+Here we are using the sql server database and mssql node module included here and it is seperated from ORM module.
+
+Based on the code you can get an idea of how to use different database engines inside our framework.
   
 ## Moving forward
  In the future we want our framework to include cool features like
- - ORM development  
+ - Test framework addition
  - Secure api development 
  
