@@ -141,7 +141,7 @@ Open the browser and type -> http://localhost:8888/template shows
 ## Object Realational Mapping(ORM)
 This is node js object relational mapping module named orm node module. The key feature of ORM is the mapping it uses to bind an object to its data in the database.
 ORM has the benefit of allowing you to more easily support more database engines.
-Currenly it support following DBMS
+Currently it supports following DBMS
 
  - MySQL & MariaDB 
  - PostgreSQL
