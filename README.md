@@ -138,7 +138,7 @@ template code for controller
 
 Open the browser and type -> http://localhost:8888/template shows
 ![template](https://raw.githubusercontent.com/fingent/xenops/master/lib/doc/codescreens/template.png)
-## Object Realational Mapping(ORM)
+## Object Relational Mapping(ORM)
 This is node js object relational mapping module named orm node module. The key feature of ORM is the mapping it uses to bind an object to its data in the database.
 ORM has the benefit of allowing you to more easily support more database engines.
 Currently it supports following DBMS
